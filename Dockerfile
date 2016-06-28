@@ -4,9 +4,8 @@ RUN apt-get update && apt-get install -y \
     libmemcached-dev \
     libmcrypt-dev
 
-RUN curl -o /phpunit https://phar.phpunit.de/phpunit.phar && \
-	curl -o /composer https://getcomposer.org/composer.phar && \
-	chmod +x /phpunit /composer
-
+RUN curl https://phar.phpunit.de/phpunit.phar -L -o phpunit.phar \
+    && chmod +x phpunit.phar \
+    && mv phpunit.phar /usr/local/bin/phpunit
 
 RUN docker-php-ext-install pdo pdo_mysql mbstring bcmath mcrypt
