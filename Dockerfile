@@ -8,4 +8,4 @@ RUN curl https://phar.phpunit.de/phpunit.phar -L -o phpunit.phar \
     && chmod +x phpunit.phar \
     && mv phpunit.phar /usr/local/bin/phpunit
 
-RUN docker-php-ext-install pdo pdo_mysql mbstring bcmath mcrypt
+RUN docker-php-ext-install pdo pdo_mysql mbstring bcmath mcrypt sockets calendar
